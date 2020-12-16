@@ -1,0 +1,34 @@
+---
+title: "A look at NBA franchises"
+author: "Alfonso Solis"
+date: "12/13/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This data was found at https://www.basketball-reference.com/teams/ and scrapped using Selenium in Python.
+
+```{r, echo = FALSE }
+library(ggplot2)
+library(knitr)
+library(DT)
+library(ggrepel)
+```
+
+
+
+```{r pressure, echo=FALSE}
+franch_stats = read.csv("franchise_stats.csv")
+datatable(franch_stats)
+```
+Above we a table I have constructed showing the link to each team's Basketball Reference page as well as their wins, losses and championships (conveniently named Rings).
+
+
+```{r, echo = FALSE}
+ggplot(franch_stats, aes(x = Losses, y = Wins, label = Teams)) + geom_point(color = "red",size =3) + geom_label_repel(aes(label = ifelse(Rings > 4, as.character(Teams),"")))
+```
