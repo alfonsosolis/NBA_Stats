@@ -1,0 +1,18 @@
+---
+title: "A look at Franchise wins and their Rings: NBA"
+output: html_notebook
+---
+
+This data was found at https://www.basketball-reference.com/teams/ and scrapped using Selenium in Python.
+
+```{r}
+#libraries used in this project
+library(ggplot2)
+```
+
+```{r}
+franch_stats = read.csv("franchise_stats.csv")
+franch_stats
+```
+
+As we

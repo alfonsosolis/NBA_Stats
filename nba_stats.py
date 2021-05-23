@@ -16,8 +16,7 @@ wins = driver.find_elements_by_css_selector('table#teams_active tr[class="full_t
 losses = driver.find_elements_by_css_selector('table#teams_active tr[class="full_table"]>td:nth-child(8)') ## td nth child includes th as well
 championships =driver.find_elements_by_css_selector('table#teams_active tr[class="full_table"]>td:nth-child(13)') ## td nth child includes th as well
 
-#players = driver.find_elements_by_xpath('//td[@class="name"]') # Names of players
-#salary = driver.find_elements_by_xpath('//td[@class = "hh-salaries-sorted"]') # Correspondning player salaries
+
 
 
 
